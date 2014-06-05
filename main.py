@@ -10,13 +10,24 @@ class Form(QtGui.QTableView):
         self.ventana =  Ui_Tarea1()
         self.ventana.setupUi(self)
         self.ventana.pushButton_3.clicked.connect(self.borrar)
-        self cargararchivos()
+#        self cargararchivos()
+        self.render_table()
         self.show()
     def borrar(self):
         pass
 
+    def render_table(self):
+        self.table = QtGui.QTableView(self)
+        self.table.setFixedWidth(790)
+        self.table.setFixedHeight(450)
+        self.table.setSelectionBehavior(QtGui.QAbstractItemView.SelectRows)
+        self.table.setAlternatingRowColors(True)
+        self.table.setSortingEnabled(True)
+        #Se incorpora la tabla al layout
+        self.ventana.addWidget(self.table)
 
-    def cargararchivos():
+#    def cargararchivos():
+#    marca = controller.obtener_marca()
 
 
 def run():
