@@ -2,7 +2,7 @@ import sqlite3
 
 createDb = sqlite3.connect('Marcas.db')
 
-p = createDb.cursor()
+###p = createDb.cursor()
 
 def crearBDTablas():
     p.execute('''CREATE TABLE marca
