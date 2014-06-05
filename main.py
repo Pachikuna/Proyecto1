@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
 import sys
 from PySide import QtGui, QtCore
 import controller
 from interfas_Tarea1 import *
+
 
 class Form(QtGui.QWidget):
     def __init__(self, parent=None):
@@ -13,35 +15,26 @@ class Form(QtGui.QWidget):
         self.cargararchivos()
         self.show()
 
-
     def borrar(self):
         pass
 
     def render_table(self):
-        self.table = QtGui.QTableView(self)
-        self.table.setFixedWidth(700)
-        self.table.setFixedHeight(400)
-        self.table.setSelectionBehavior(QtGui.QAbstractItemView.SelectRows)
-        self.table.setAlternatingRowColors(True)
-        self.table.setSortingEnabled(True)
-        #Se incorpora la tabla al layout
-        self.ventana.addWidget(self.table)
 
+        self.ventana.TABLA.setSelectionBehavior(
+            QtGui.QAbstractItemView.SelectRows)
+#        self.ventana.TABLA.setAlternatingRowColors(True)
+#        self.ventana.TABLA.setSortingEnabled(True)
 
     def cargararchivos(self):
         producto = controller.obtener_productos()
-
-
         self.model = QtGui.QStandardItemModel(len(producto), 7)
-        self.model.setHorizontalHeaderItem(0, QtGui.QStandardItem(u"codigo"))
+        self.model.setHorizontalHeaderItem(0, QtGui.QStandardItem(u"código"))
         self.model.setHorizontalHeaderItem(1, QtGui.QStandardItem(u"Nombres"))
         self.model.setHorizontalHeaderItem(2, QtGui.QStandardItem(u"Descripcion"))
         self.model.setHorizontalHeaderItem(3, QtGui.QStandardItem(u"Color"))
         self.model.setHorizontalHeaderItem(4, QtGui.QStandardItem(u"Precio Bruto"))
         self.model.setHorizontalHeaderItem(5, QtGui.QStandardItem(u"Precio Neto"))
         self.model.setHorizontalHeaderItem(6, QtGui.QStandardItem(u"id marca"))
-
-
         r = 0
         for row in producto:
             index = self.model.index(r, 0, QtCore.QModelIndex())
@@ -58,18 +51,15 @@ class Form(QtGui.QWidget):
             self.model.setData(index, row['precioneto'])
             index = self.model.index(r, 6, QtCore.QModelIndex())
             self.model.setData(index, row['id_marca'])
-
-            r = r+1
-        self.table.setModel(self.model)
-
-        self.table.setColumnWidth(0, 100)
-        self.table.setColumnWidth(1, 210)
-        self.table.setColumnWidth(2, 210)
-        self.table.setColumnWidth(3, 230)
-        self.table.setColumnWidth(4, 240)
-        self.table.setColumnWidth(5, 250)
-        self.table.setColumnWidth(6, 260)
-
+            r = r + 1
+        self.ventana.TABLA.setModel(self.model)
+        self.ventana.TABLA.setColumnWidth(0, 100)
+        self.ventana.TABLA.setColumnWidth(1, 100)
+        self.ventana.TABLA.setColumnWidth(2, 150)
+        self.ventana.TABLA.setColumnWidth(3, 100)
+        self.ventana.TABLA.setColumnWidth(4, 100)
+        self.ventana.TABLA.setColumnWidth(5, 100)
+        self.ventana.TABLA.setColumnWidth(6, 100)
 
 
 def run():
