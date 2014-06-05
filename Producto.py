@@ -5,7 +5,7 @@
 # Created: Thu Jun  5 05:49:28 2014
 #      by: pyside-uic 0.2.14 running on PySide 1.1.2
 #
-# WARNING! All changes made in this file will be lost!
+# WARNING! All changes made in this file will be lost! :D
 
 from PySide import QtCore, QtGui
 
