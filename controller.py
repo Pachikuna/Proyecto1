@@ -17,10 +17,24 @@ def obtener_marca():
     con.close()
     return marca
 
+def obtener_productos():
+    con = conectar()
+    c = con.cursor()
+    query = "SELECT * FROM products"
+    resultado= c.execute(query)
+    producto = resultado.fetchall()
+    con.close()
+    return producto
+
 
 
 if __name__ == "__main__":
 
     marca = obtener_marca()
     for marcas in marca:
-        print marcas["nombre"]
+        print marcas
+
+
+    producto = obtener_productos()
+    for produc in producto:
+        print produc

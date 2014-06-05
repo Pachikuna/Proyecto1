@@ -6,7 +6,7 @@
 #      by: pyside-uic 0.2.14 running on PySide 1.1.2
 #
 # WARNING! All changes made in this file will be lost!
-
+import sys
 from PySide import QtCore, QtGui
 
 class Ui_Editar(object):
@@ -94,4 +94,3 @@ class Ui_Editar(object):
         self.label_3.setText(QtGui.QApplication.translate("Editar", "Descripcion:", None, QtGui.QApplication.UnicodeUTF8))
         self.label_7.setText(QtGui.QApplication.translate("Editar", "Imagen:", None, QtGui.QApplication.UnicodeUTF8))
         self.pushButton_2.setText(QtGui.QApplication.translate("Editar", "Cancelar", None, QtGui.QApplication.UnicodeUTF8))
-

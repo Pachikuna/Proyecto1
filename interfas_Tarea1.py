@@ -9,10 +9,11 @@
 
 from PySide import QtCore, QtGui
 
+
 class Ui_Tarea1(object):
     def setupUi(self, Tarea1):
         Tarea1.setObjectName("Tarea1")
-        Tarea1.resize(619, 438)
+        Tarea1.resize(1000, 438)
         self.gridLayout = QtGui.QGridLayout(Tarea1)
         self.gridLayout.setObjectName("gridLayout")
         self.pushButton_2 = QtGui.QPushButton(Tarea1)
