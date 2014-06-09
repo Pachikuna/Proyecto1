@@ -2,10 +2,10 @@
 
 # Form implementation generated from reading ui file 'Producto.ui'
 #
-# Created: Thu Jun  5 05:49:28 2014
+# Created: Sun Jun  8 00:30:27 2014
 #      by: pyside-uic 0.2.14 running on PySide 1.1.2
 #
-# WARNING! All changes made in this file will be lost! :D
+# WARNING! All changes made in this file will be lost!
 
 from PySide import QtCore, QtGui
 
@@ -33,7 +33,6 @@ class Ui_Productos(object):
         self.comboBox = QtGui.QComboBox(Productos)
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
-        self.comboBox.setItemText(0, "")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
@@ -58,6 +57,7 @@ class Ui_Productos(object):
         self.pushButton_3.setText(QtGui.QApplication.translate("Productos", "Eliminar", None, QtGui.QApplication.UnicodeUTF8))
         self.lineEdit.setPlaceholderText(QtGui.QApplication.translate("Productos", "Ingrese el nombre de un producto", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("Productos", "Seleccione una marca", None, QtGui.QApplication.UnicodeUTF8))
+        self.comboBox.setItemText(0, QtGui.QApplication.translate("Productos", "Todos", None, QtGui.QApplication.UnicodeUTF8))
         self.comboBox.setItemText(1, QtGui.QApplication.translate("Productos", "NIKE", None, QtGui.QApplication.UnicodeUTF8))
         self.comboBox.setItemText(2, QtGui.QApplication.translate("Productos", "REEBOK", None, QtGui.QApplication.UnicodeUTF8))
         self.comboBox.setItemText(3, QtGui.QApplication.translate("Productos", "SAMSUNG", None, QtGui.QApplication.UnicodeUTF8))
